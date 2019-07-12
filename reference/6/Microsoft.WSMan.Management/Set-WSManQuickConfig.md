@@ -30,9 +30,11 @@ If the WinRM service is not running, the service is started.
 - Sets the WinRM service startup type to automatic.
 - Creates a listener to accept requests on any IP address.
 By default, the transport is HTTP.
-- Enables a firewall exception for WinRM traffic .
+- Enables a firewall exception for HTTP WinRM traffic.
 
 To run this cmdlet, start PowerShell by using the Run as administrator option.
+
+When using the *UseSSL* parameter the firewall rules to allow HTTPS traffic in need to be set manually.
 
 ## EXAMPLES
 
@@ -104,6 +106,8 @@ By default, SSL is not used.
 WS-Management encrypts all the PowerShell content that is transmitted over the network.
 The *UseSSL* parameter lets you specify the additional protection of HTTPS instead of HTTP.
 If SSL is not available on the port that is used for the connection, and you specify this parameter, the command fails.
+
+When using the *UseSSL* parameter the firewall rules to allow HTTPS traffic in need to be set manually.
 
 ```yaml
 Type: SwitchParameter
